@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const PORT = 8080
-const xml2js = require('xml2js')
 
 var nrOfParticipant = 0
 var nrOfChatMessages = 0
@@ -26,7 +25,7 @@ class EndpointFunctions {
             messageJson.participantId.push(chat.participantId[i])
             messageJson.message.push(chat.message[i])
         }
-        res.send(JSON.stringify(messageJson));
+        res.send(JSON.stringify(messageJson))
     }
 
     static clearStorage(req, res) {

@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 8080
+const xml2js = require('xml2js')
 
 var nrOfParticipant = 0
 var nrOfChatMessages = 0
@@ -17,6 +18,7 @@ class EndpointFunctions {
         chat.participantId.push(req.query.id)
         chat.message.push(req.query.message)
         nrOfChatMessages++
+        res.send(JSON.stringify({success: true}))
     }
 
     static getMessageJson(req, res) {
@@ -32,6 +34,7 @@ class EndpointFunctions {
         nrOfParticipant = 0
         nrOfChatMessages = 0
         chat = {participantId: [], message: []}
+        res.send(JSON.stringify({success: true}))
     }
 
     static getNrOfChatMessages(req, res) {

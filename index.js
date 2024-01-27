@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const PORT = 8080
-const xml2js = require('xml2js')
 
 var nrOfParticipant = 0
 var nrOfChatMessages = 0
